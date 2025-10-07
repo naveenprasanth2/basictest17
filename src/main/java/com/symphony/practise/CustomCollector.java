@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 public class CustomCollector {
     static void main() {
         List<String> data = List.of("apple", "banana", "cherry");
-        String result = data.stream().collect(
+        String result = data.parallelStream().collect(
                 Collector.of(StringBuilder::new, //Supplier
                         (x1, x2) -> x1.append(x2).append(", "), //Accumulator
                         StringBuilder::append, //Combiner
