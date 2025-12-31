@@ -19,9 +19,7 @@ public class LongestWord {
                     }
                 },
                 (map1, map2) -> {
-                    map2.forEach((k, v) -> {
-                        map1.merge(k, v, (w1, w2) -> w1.length() > w2.length() ? w1 : w2);
-                    });
+                    map2.forEach((k, v) -> map1.merge(k, v, (w1, w2) -> w1.length() > w2.length() ? w1 : w2));
                     return map1;
                 }
         ));
