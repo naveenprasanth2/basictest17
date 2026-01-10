@@ -18,7 +18,7 @@ public class EmployeesByFirstNameLength {
                 (builder1, builder2) -> {
                     builder1.append(builder2);
                     return builder1;
-                }, builder -> builder.substring(0, builder.length() - 2)));
+                }, builder -> !builder.isEmpty() ? builder.substring(0, builder.length() - 2) : ""));
         System.out.println(result);
     }
 }
