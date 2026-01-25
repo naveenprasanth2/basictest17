@@ -19,12 +19,11 @@ public class EvenAndOdd2 implements Runnable {
                     break;
                 }
 
-                if (count.get() %2 == 0 && Thread.currentThread().getName().equals("even")) {
+                if (count.get() % 2 == 0 && Thread.currentThread().getName().equals("even")) {
                     System.out.println("The value is " + count.get() + " and the thread name is " + Thread.currentThread().getName());
                     count.getAndIncrement();
                     object.notify();
-                }
-                if (count.get() %2 != 0 && Thread.currentThread().getName().equals("odd")) {
+                } else if (count.get() % 2 != 0 && Thread.currentThread().getName().equals("odd")) {
                     System.out.println("The value is " + count.get() + " and the thread name is " + Thread.currentThread().getName());
                     count.getAndIncrement();
                     object.notify();
