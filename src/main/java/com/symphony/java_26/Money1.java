@@ -4,7 +4,7 @@ import lombok.ToString;
 
 // Testing Valhalla features in IntelliJ
 @ToString
-public value class Money1 {
+public class Money1 {
     private final int amount;
     private final String currency;
     private final StringBuilder stringBuilder;

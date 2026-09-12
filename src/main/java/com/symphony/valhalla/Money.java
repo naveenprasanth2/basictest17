@@ -1,6 +1,6 @@
 package com.symphony.valhalla;
 
-public value class Money implements Comparable<Money> {
+public class Money implements Comparable<Money> {
     private final long units;
     private final int nanos;
     private final String currencyCode;
