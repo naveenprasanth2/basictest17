@@ -17,11 +17,28 @@ public class DisjointSet {
     private int findLeader(int x) {
         if (parent[x] == x)
             return x;
-        else
-            return findLeader(parent[x]);
+        else {
+            int leader = findLeader(parent[x]);
+            parent[x] = leader;
+            return leader;
+        }
+            
     }
 
     public boolean isSame(int x, int y) {
         return findLeader(x) == findLeader(y);
+    }
+
+    public void merge(int x, int y) {
+        int xLeader = findLeader(x);
+        int yLeader = findLeader(y);
+        if (rank[xLeader] < rank[yLeader]) {
+            parent[xLeader] = yLeader;
+        } else {
+            parent[yLeader] = xLeader;
+            if (rank[xLeader] == rank[yLeader]) {
+                rank[xLeader]++;
+            }
+        }
     }
 }
